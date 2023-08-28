@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Task Management{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-light navbar-expand-md py-3 navbar_color">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span class="fs-1 text-warning">TASKMASTERY</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav me-auto"></ul>
+                {% if user:  %}
+                <button class="btn btn-light" type="button" style="margin-right: 15px;"><a href="{{url_for('logout')}}">Logout</a></button>
+                {% else %}
+                {% if admin:  %}
+                 <button class="btn btn-light" type="button" style="margin-right: 15px;"><a href="{{url_for('logout')}}">Logout</a></button>
+                 {% else %}
+                 <button class="btn btn-light" type="button" style="margin-right: 15px;"><a href="{{url_for('admin_login')}}">Admin-login</a></button>
+                 <button class="btn btn-light" type="button" style="margin-right: 15px;"><a href="{{url_for('login')}}">User-login</a></button>
+                 {% endif %}  
+                 {% endif %}
+            </div>
+        </div>
+    </nav>
+   
+    {% if admin:  %}
+    <h1 class="heading">Welcome {{admin.a_name}}!!</h1>
+    <div class="container user">
+        <div class="add_user">
+            <img class="imag" src="static/images/add_user.png" alt="img">
+            <div class="btn-class">
+                <button class="btn btn-light add-btn" type="button"><a href="{{url_for('add_user')}}">Add User</a></button>
+                <button class="btn btn-light" type="button"><a href="{{url_for('users')}}">View Users</a></button>
+            </div>
+
+        </div>
+        <div class="add_project">
+            <img class="imag" src="static/images/add_project.jpg" alt="img">
+            <div class="btn-class1">
+                <button class="btn btn-light add-btn2" type="button"><a href="{{url_for('project')}}">View Projects</a></button>
+                <button class="btn btn-light" type="button"><a href="{{url_for('add_project',admin_id=admin_id)}}">Add Projects</a></button>
+            </div>
+
+        </div>
+
+    </div>
+    {%elif user: %}
+    <h1 class="heading">Hello {{user.U_name}} !!</h1>
+      <div class="user_main_div">
+        <div class="userdiv">
+            <!-- <h3 >Here are your Projects</h3> -->
+            <img class="my_image" src="static/images/add_project.jpg" alt="img">
+            <button class="btn btn-light image" type="button"><a href="{{url_for('user_project')}}">Your Projects</a></button>
+
+        </div>
+      </div>
+
+    {% else %}
+        <h1 class="heading">Welcome To Taskmastery </h1>
+    {% endif %}  
+
+
+{% endblock %}
+
+

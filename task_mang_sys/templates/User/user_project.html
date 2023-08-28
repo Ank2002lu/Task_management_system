@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Task Management{% endblock %}
+
+{% block content %}
+<h1 class="heading">Here are your assigned Projects</h1>
+<div class="table-responsive project_table">
+    <table class="table">
+        <thead class="table_header">
+            <tr>
+                <th>Project Name</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>View Task</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prj in projects %}
+            <tr class="table_row">
+                 <td>{{prj.P_name}}</td>
+                <td>{{prj.P_desc}}</td>
+                <td>{{prj.P_status}}</td>
+                <td><button class="btn btn-light" type="button"><a href="{{url_for('user_task')}}">Your Tasks</a></button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Task Management{% endblock %}
+
+{% block content %}
+<h1 class="heading">Here are your Projects</h1>
+<div class="table-responsive project_table">
+    <table class="table">
+        <thead class="table_header">
+            <tr>
+                <th>Project Name</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Update</th>
+                <th>Delete</th>
+                <th>Add Task</th>
+                <th>View Tasks</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prj in projects %}
+            <tr class="table_row">
+                 <td>{{prj.P_name}}</td>
+                <td>{{prj.P_desc}}</td>
+                <td>{{prj.P_status}}</td>
+                <td><button class="btn btn-warning" type="button" style="margin-left: 1px;"><a href="{{url_for('update_project',project_id=prj.P_id )}}">Update</a></button></td>
+                <td><button class="btn btn-warning" type="button"><a href="{{url_for('delete_project',project_id=prj.P_id)}}">Delete</a></button></td>
+                <td><button class="btn btn-warning" type="button"><a href="{{url_for('add_task',project_id=prj.P_id,admin_id=prj.a_id)}}">Add Task</a></button></td>
+                <td><button class="btn btn-warning" type="button"><a href="{{url_for('task',project_id=prj.P_id)}}"> View Task</a></button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div>
+    <button class="btn btn-light add_prj_button" type="button"><a href="{{url_for('add_project',admin_id=admin_id)}}">Add Project</a></button>
+</div>
+
+
+{% endblock %}

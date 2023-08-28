@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Task Management{% endblock %}
+
+{% block content %}
+<div class="table-responsive project_table">
+    <table class="table">
+        <h1 class="list_heading">COMPLETED TASKS</h1>
+        <thead class="table_header">
+            <tr>
+                <th>Task Name</th>
+                <th>Start Date</th>
+                <th>Deadline</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tsk in completed_tasks %}
+            <tr class="table_row">
+                 <td>{{tsk.T_name}}</td>
+                <td>{{tsk.T_date}}</td>
+                <td>{{tsk.T_deadline}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <table class="table">
+        <h1 class="list_heading">TASKS IN-PROGRESS </h1>
+        <thead class="table_header">
+            <tr>
+                <th>Task Name</th>
+                <th>Start Date</th>
+                <th>Deadline</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tsk in inprogress_tasks %}
+            <tr class="table_row">
+                 <td>{{tsk.T_name}}</td>
+                <td>{{tsk.T_date}}</td>
+                <td>{{tsk.T_deadline}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <table class="table">
+        <h1 class="list_heading">ASSIGNED TASKS</h1>
+        <thead class="table_header">
+            <tr>
+                <th>Task Name</th>
+                <th>Start Date</th>
+                <th>Deadline</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tsk in assigned_tasks %}
+            <tr class="table_row">
+                 <td>{{tsk.T_name}}</td>
+                <td>{{tsk.T_date}}</td>
+                <td>{{tsk.T_deadline}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>      
+{% endblock %}

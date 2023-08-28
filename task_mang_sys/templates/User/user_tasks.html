@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Task Management{% endblock %}
+
+{% block content %}
+<p class="user_task_button">
+    <button class="btn btn-light" type="button"><a href="{{url_for('tasklist',user_id = U_id)}}">Task Info</a></button>
+</p>
+<h1 class="heading">Here are your assigned Tasks</h1>
+<div class="table-responsive project_table">
+    <table class="table">
+        <thead class="table_header">
+            <tr>
+                <th>Task Name</th>
+                <th>Start Date</th>
+                <th>Deadline</th>
+                <th>Status</th>
+                <th>Update</th>
+                <th>Comments</th>
+                <th>View Comments</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for tsk in project %}
+            <tr class="table_row">
+                 <td>{{tsk.T_name}}</td>
+                <td>{{tsk.T_date}}</td>
+                <td>{{tsk.T_deadline}}</td>
+                <td>{{tsk.T_status}}</td>
+                <td><button class="btn btn-light" type="button" style="margin-left: 1px;"><a href="{{url_for('user_update_task',task_id=tsk.Task_id)}}">Update</a></button></td>
+                <td><button class="btn btn-light" type="button"><a href="{{url_for('user_add_comment',task_id=tsk.Task_id,user_id=tsk.U_id)}}">Add Comment</a></button></td>
+                <td><button class="btn btn-light" type="button"><a href="{{url_for('user_comment',task_id=tsk.Task_id,user_id=tsk.U_id)}}">View Comments</a></button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>    
+{% endblock %}

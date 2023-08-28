@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Task Management{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 class="heading">Comments</h1>
+        <div class="table-responsive project_table">
+            <table class="table">
+                <thead class="table_header">
+                    <tr>
+                        <th>BY</th>
+                        <th>TO</th>
+                        <th>TIME</th>
+                        <th>COMMENT</th>
+                        <th>ADD</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cmt in comment %}
+                    <tr class="table_row">
+                        <td>{{cmt.C_by}}</td>
+                        <td>{{cmt.C_to}}</td>
+                        <td>{{cmt.C_time}}</td>
+                        <td>{{cmt.C_text}}</td>
+                        <td><button class="btn btn-warning" type="button"><a href="{{url_for('add_comment',task_id=cmt.Task_id )}}">Add</a></button></td>
+                        <td><button class="btn btn-warning" type="button"><a href="{{url_for('delete_comment',task_id=cmt.Task_id,Comment_id = cmt.C_id)}}">Delete</a></button></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}

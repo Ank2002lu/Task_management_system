@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Task Management{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 class="text-center form_heading">Add Your Comment</h1>
+     <form action="{{url_for('add_comment',task_id = task_id)}}", method="POST">
+        <div class="row">
+            <div class="col"><input class="form-control cmt_form" type="text" name="C_to" placeholder="TO"></div>
+        </div>
+        <div class="row">
+            <div class="col"><input class="form-control cmt_form" type="time" name="C_time" placeholder="Time"></div>
+        </div>
+        <div class="row">
+            <div class="col"><input class="form-control cmt_form" type="text" name="C_text" placeholder="Comment"></div>
+        </div>
+        <div class="submit">
+                <button class="btn btn-dark submit_button" type="submit">Submit</button>            
+        </div>   
+    </form>
+</section>
+{% endblock %}

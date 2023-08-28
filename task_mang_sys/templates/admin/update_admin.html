@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <h1 class="form_heading">Admin Update</h1>
+        <form method="POST" action="{{url_for('update_admin',admin_id=admin.a_id)}}">
+        <div class="row">
+            <div class="col">
+                <input class="form-control register" name="name" type="text" placeholder="Name:" value="{{admin.a_name}}"> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input class="form-control register" name="email" type="email" placeholder="Email:"value="{{admin.a_email}}" > 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input class="form-control register" name="password" type="password" placeholder="Password:" value="{{admin.a_password}}"> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input class="form-control register"  name="status" type="text" placeholder="status:" value="{{admin.a_status}}"> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="female">female</label><input type="radio" name="gender" id="female" value="F" >
+                <label for="male">male</label><input type="radio" name="gender" id="male" value="M">
+            </div>
+        </div>
+        
+        <div class="submit">
+                <button class="btn btn-primary submit_button">Register</button>
+            
+                
+        </div>            
+    </form>
+{% endblock %}

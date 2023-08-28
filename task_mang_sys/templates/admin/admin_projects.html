@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}ADD PROJECT{% endblock %}
+
+{% block content %}
+<h1 class="heading ">Add New Project</h1>
+    <form method="POST" action="{{url_for('add_project',admin_id=admin_id)}}">
+        <div class="row">
+            <div class="col">
+                <input class="form-control project_form" name="name" type="text" placeholder="Project Name:" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input class="form-control project_form" name="desc" type="text" placeholder="Description:" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+               <p class="para1">Status:
+                 <select class="list_dropdown" name="status">
+                    <option value="Assigned">Assigned</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                </p> 
+            </div>
+        </div>
+        <div class="submit">
+                <button class="btn btn-primary submit_button" type="submit">Submit</button>            
+        </div>
+    </form>
+{% endblock %}

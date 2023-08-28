@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h1 class="heading">Admin Login</h1>
+    <section></section>
+    <form method="post" action="{{url_for('admin_login')}}">
+        <div class="row">
+            <div class="col">
+                <input class="form-control login" type="text" name="email" placeholder="Email:"> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input class="form-control login" type="password" name="password" placeholder="Password:"> 
+            </div>
+        </div>
+        <div class="submit">
+            <button class="btn btn-primary submit_button">Login</button>
+        
+            
+        </div>
+    </form>
+    {% endblock %}

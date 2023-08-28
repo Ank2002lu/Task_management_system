@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Assign Task{% endblock %}
+
+{% block content %}
+
+    <h1 class="heading">Hello,Admin!!!</h1>
+    <h3 class="heading" >Please Fill the below form to assign users</h3>
+    <div class="assign_task_page">
+           
+        <div class="form-check check_boxs">        
+            {% for user in users %}
+            <form action="{{url_for('assign_task',task_id=task_id)}}" method="post">
+                <input class="form-check-input" type="checkbox" id="users" name="users" value="{{user.U_id}}">
+                <label class="form-check-label" for="users">{{user.U_name}}</label>
+            {% endfor %}
+
+                <div>
+                    <button class="btn btn-warning assign_button" type="submit">Submit</button>
+    
+                </div>
+            </form>
+        </div> 
+     </div>
+
+    
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Task Management{% endblock %}
+
+{% block content %}
+<h1 class="heading">Admin</h1>
+<div class="table-responsive project_table">
+    <table class="table">
+        <thead class="table_header">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Gender</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usr in admin %}
+            <tr class="table_row">
+                 <td>{{usr.a_name}}</td>
+                <td>{{usr.a_email}}</td>
+                <td>{{usr.a_status}}</td>
+                <td>{{usr.a_gender}}</td>
+                <td><button class="btn btn-light" type="submit"><a href="{{url_for('update_admin',admin_id =usr.a_id )}}">Update</a></button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div>
+{% endblock %}

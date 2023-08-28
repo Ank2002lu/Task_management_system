@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Task Management{% endblock %}
+
+{% block content %}
+<h1 class="heading">Hello,Admin!!!</h1>
+    <h3 class="heading3">Following are the Users working under you.</h3>
+    <div class="table-responsive project_table">
+        <table class="table">
+            <thead class="table_header">
+                <tr>
+                    <th>user Name</th>
+                    <th>Email</th>
+                    <!-- <th>password</th> -->
+                    <th>Status</th>
+                    <th>Gender</th>
+                    <th>Task List</th>
+                    <th>Update User</th>
+                    <th>Delete User</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for usr in users %}
+                <tr class="table_row">
+                     <td>{{usr.U_name}}</td>
+                    <td>{{usr.U_email}}</td>
+                    <!-- <td>{{usr.U_password}}</td> -->
+                    <td>{{usr.U_status}}</td>
+                    <td>{{usr.U_gender}}</td>
+                    <td><button class="btn btn-light" type="button"><a href="{{url_for('tasklist',user_id = usr.U_id)}}">User Tasks Info</a></button></td>
+                    <td><button class="btn btn-light" type="button"><a href="{{url_for('update_user',admin_id=usr.U_a_id,user_id =usr.U_id )}}">Update</a></button></td>
+                    <td><button class="btn btn-light" type="button"><a href="{{url_for('delete_user',admin_id=usr.U_a_id,user_id=usr.U_id)}}">Delete</a></button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        {%if admin: %}
+        <button class="btn btn-light submit_button"><a href="{{url_for('add_user',admin_id=admin_id)}}">Add user</a></button>
+        
+        {% endif %}
+    
+    </div>
+{% endblock %}

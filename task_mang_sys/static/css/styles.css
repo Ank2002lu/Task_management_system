@@ -1,0 +1,337 @@
+body{
+    background-size:cover;
+}
+
+.login{
+    width: 50%;
+    margin: auto;
+    margin-top: 2rem;
+    font-family: Adamina, serif;
+}
+.btn{
+    background-color: #FFC93C;
+}
+.submit_button{
+    margin-left: 43.75rem;
+    margin-top: 2rem;
+    font-family: Adamina, serif;
+    
+}
+.submit_button1{
+    margin-left: 42.3rem;
+    margin-top: 2rem;
+    font-family: Adamina, serif;
+}
+.submit_button2{
+    margin-left: 45rem;
+    margin-top: 2rem;
+    font-family: Adamina, serif;
+}
+.list_button{
+    width: 20%;
+    background-color: crimson;
+}
+.add_prj_button{
+    margin-left: 43.75Rem;
+    margin-top: -10rem;
+    font-family: Adamina, serif;
+}
+
+.radio_button{
+    margin-left: 23rem;
+    margin-top: 1rem;
+    font-size: larger;
+    font-weight: 600;
+    color: #83ff3c;
+}
+
+.register{
+    width: 50%;
+    margin: auto;
+    margin-top: 2rem;
+    font-family: Adamina, serif;
+    color: crimson;
+}
+
+.project_form{
+    margin-bottom: 20px;
+    width: 50%;
+    font-family: 'Abhaya Libre', serif;
+    margin-left: 25rem;
+    margin-top: 1.5rem;
+}
+.heading{
+    text-align: center;
+    color: chartreuse;
+    margin-top: 3rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.heading2{
+    text-align: center;
+    color: chartreuse;
+    margin-top: 3rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.heading3{
+    text-align: center;
+    color: chartreuse;
+    margin-top: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.list_heading{
+    text-align: center;
+    background-color: black;
+    color: chartreuse;
+    /* margin-top: 3rem; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.task_form{
+    margin-bottom: 20px;
+    width: 50%;
+    font-family: 'Abhaya Libre', serif;
+    margin-left: 25rem;
+}
+
+.cmt_form{
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 25rem;
+}
+
+.form_heading{
+    text-align: center;
+    font-family: 'Abhaya Libre', serif;  
+    margin-top: 122px;
+    color: chartreuse;
+    
+}
+
+/* .dropdown{
+text-align: center;
+background-color: #86E5FF;
+width: 25%;
+height: 8rem;
+margin-top: 3rem;
+margin-left: 35rem;
+margin: auto;
+border-radius: 50%;
+
+} */
+.alert-warning{
+    background-color: #ffcc00;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 50%;
+    margin-left: 25rem;
+}
+select {
+    /* background-color:#83ff3c; */
+    color: #333;
+    font-size: 20px;
+    /* padding: 10px; */
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    appearance: none;
+    width: 20%;
+    text-align: center;
+    margin-left: 38rem;
+    font-family:'Abhaya Libre', serif;
+   
+}
+.user_task_button{
+/* text-align: center; */
+margin-left: 87rem;
+margin-top: 2rem;
+
+}
+
+/* change the background color of the option elements */
+/* option {
+    background-color: rgb(23, 104, 197);
+    color: #333;
+}
+
+/* change the background color of the selected option */
+option:checked {
+    background-color: #ffcc00;
+    color: #fff;
+}
+
+/* change the background color of the dropdown list when hovered over */
+select:hover {
+    background-color: #FFC93C;
+}
+
+/* change the background color of the dropdown list when active */ 
+
+.list_dropdown{
+    margin-top: 3rem;
+    margin-left: -1.rem;
+    /* background-color:#ff9900; */
+    position: relative;
+    right: 33rem;
+    height: 2rem;
+    bottom: 2rem;
+    top: -4.8rem;
+
+}
+
+.para1{
+    width: 50%;
+    background-color: white;
+    /* text-align: center; */
+    margin-left: 3rem;
+    position: relative;
+    left: 22rem;
+    padding-left: 1rem;
+    height: 2.5rem; 
+    border-radius: 5px;
+    font-size: 1.4rem;
+    top: 1rem;
+}
+
+/* **************************Table CSS************************************************* */
+.project_table{
+    border-width: 5px;
+    border-color: black;
+    width: 60%;
+    margin:10rem auto;
+    background-color: white;
+}
+
+.table_header{
+    border-width: 2px;;
+    border-color: black;
+    background-color: #5BC0F8;
+}
+
+.table_row{
+    border-width: 2px;
+    border-color: black;
+    
+}
+/* *******************************Admin_page************************************ */
+
+.add_project{
+    width: 18rem;
+    height: 18rem;
+
+    margin-top: 5rem;
+}
+.user{
+    display: flex;
+    margin-top: 2rem;
+}
+.add_user{
+    width: 18rem;
+    height: 18rem;
+    margin-top: 3rem;
+    margin-right: 38rem;
+}
+
+.imag{
+    width: 18rem;
+    height: 14rem;
+}
+.btn-class{
+    padding: 8px;    
+}
+.btn-class1{
+    padding: 8px;    
+}
+.add-btn{
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.add-btn2{
+    margin-right: 2rem;
+}
+.assign_task_page{
+    border-radius:10%;
+    margin: 20rem;
+    margin-bottom: 5rem;
+    background-color: rgb(119, 186, 31);
+    align-items: center;
+    width: 30%;
+    height: 40%;
+    position: relative;
+    left: 15rem;
+    font-size: 35px;
+    bottom: 15rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.check_boxs{
+    margin-left: 8rem;
+    width: 7rem;
+}
+
+.assign_button{
+   
+    bottom: 20rem;
+    top: -18rem;
+    width: 180%;
+}
+
+a {
+    text-decoration: none;
+    color:crimson
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #86E5FF;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.user_main_div{
+    width: 25%;
+    border-radius: 5%;
+    margin-left: 3rem;
+    margin-top: 5rem;
+}
+
+.userdiv{
+    width: 5rem;
+}
+
+.my_image{
+    width: 18rem;
+    height: 14rem;
+    /* border-radius: 100%; */
+    margin-left: 2.5rem;
+    margin-top: 6rem;
+}
+
+.image{
+    
+    margin-left: 7rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    width: 10rem;
+}
+.navbar_color{
+    background-color: #0081C9;
+    height: 5rem;
+}
+
+.home_button{
+    margin-left: 90rem;
+    width: 5%;
+    margin-top: 1rem;
+}

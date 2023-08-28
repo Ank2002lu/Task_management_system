@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}ADD Task{% endblock %}
+
+{% block content %}
+    <h1 class="heading">Add New Task</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages: %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Alert!</strong>{{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}l̥
+   
+    <form method="POST" action="{{url_for('add_task',project_id=project_id,admin_id=admin_id)}}">
+        <div class="row">
+            <div class="col">
+                <input class="form-control task_form" name="name" type="text" placeholder="Task Name:" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input class="form-control task_form" name="deadline" type="date" placeholder="Deadline:" >
+                    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+               <p class="para1">Status:
+                 <select class="list_dropdown" name="status">
+                    <option value="Assigned">Assigned</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                </p> 
+            </div>
+        </div>
+        
+        <div class="submit">
+                <button class="btn btn-dark submit_button2" type="submit">Submit</button>            
+        </div>
+    </form>
+    {% endblock %}

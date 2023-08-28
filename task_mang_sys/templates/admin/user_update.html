@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Task Management{% endblock %}
+
+{% block content %}
+<h1 class="form_heading">User Update</h1>
+<form method="POST" action="{{url_for('update_user',admin_id=user.U_a_id,user_id=user.U_id)}}">
+    <div class="row">
+        <div class="col">
+            <input class="form-control register" name="name" type="text" placeholder="Name:" value="{{user.U_name}}"> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input class="form-control register" name="email" type="email" placeholder="Email:" value="{{user.U_email}}"> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input class="form-control register" name="password" type="password" placeholder="Password:" value="{{user.U_password}}"> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input class="form-control register"  name="status" type="text" placeholder="status:" value="{{user.U_status}}"> 
+        </div>
+    </div>
+    <div class="row radio_button">
+        <div class="col">
+            <label for="female">female</label><input type="radio" name="gender" id="female" value="F" >
+            <label for="male">male</label><input type="radio" name="gender" id="male" value="M">
+        </div>
+    </div>
+    
+    <div class="submit">
+            <button class="btn btn-primary submit_button">Register</button>
+            
+    </div>            
+</form>
+
+{% endblock %}
